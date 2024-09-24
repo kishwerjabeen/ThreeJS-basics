@@ -50,7 +50,7 @@ scene.add(mesh);
 
 
 const canvas = document.querySelector('canvas');
-let renderer = new THREE.WebGLRenderer({ canvas: canvas });
+let renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); //antialias use karny sya jagged lines na kay barabr dekhygae 
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 
@@ -73,10 +73,10 @@ renderer.render(scene, camera);
 let clock = new THREE.Clock();
 function animate() {
     // jatni apki window ki speed ha otan chalo
-        window.requestAnimationFrame(animate);
+    window.requestAnimationFrame(animate);
     // picture click hoge or chalta jayega
-        renderer.render(scene, camera);
-        // mesh.rotation.x = clock.getElapsedTime() ;
-        mesh.rotation.x = clock.getElapsedTime() * 2 ;
-    }
-    animate();
+    renderer.render(scene, camera);
+    // mesh.rotation.x = clock.getElapsedTime() ;
+    mesh.rotation.x = clock.getElapsedTime() * 2;
+}
+animate();
