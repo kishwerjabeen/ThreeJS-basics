@@ -53,3 +53,19 @@ const canvas = document.querySelector('canvas');
 let renderer = new THREE.WebGLRenderer({ canvas: canvas });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
+
+// animation
+
+function animate() {
+// jatni apki window ki speed ha otan chalo
+    window.requestAnimationFrame(animate);
+// picture click hoge or chalta jayega
+    renderer.render(scene, camera);
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.01;
+}
+animate();
+
+// oper wala funtion ap ka laptop ki speed per cahlyga 
+
+// ab asko aksa karty ha chaye 60fps ho ya 30 sba per same spped per chalu 
