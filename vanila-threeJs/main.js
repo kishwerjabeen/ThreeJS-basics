@@ -17,7 +17,17 @@ camera.position.z = 5;
 const canvas = document.querySelector('canvas');
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+
+// responsive karny kay liya 
+window.addEventListener('resize', () => {
+    // cam size set
+renderer.setSize(window.innerWidth, window.innerHeight);
+// inner ratio batana hay 
+camera.aspect = window.innerWidth / window.innerHeight;
+// note: jab bhi kahbi cam ki value change karyiengae khud say lazmi updte karna paryga 
+camera.updateProjectionMatrix();
+})
+
 
 function animate() {
     window.requestAnimationFrame(animate);
