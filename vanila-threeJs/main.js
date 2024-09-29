@@ -1,4 +1,4 @@
-alert("hello world")
+
 
 import * as THREE from 'three';
 
